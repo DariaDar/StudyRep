@@ -1,0 +1,12 @@
+.root {
+    -fx-background-image: url("background.jpg");
+    -fx-background-size: cover;
+}
+
+.label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-font-color: white;
+    -fx-background-color: white;
+}

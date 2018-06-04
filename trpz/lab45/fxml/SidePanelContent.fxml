@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="800.0" prefWidth="220.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SidePanelContentController">
+    <children>
+        <ImageView fitHeight="200.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@background.jpg" />
+            </image>
+        </ImageView>
+        <JFXButton fx:id="b1" buttonType="RAISED" onAction="#changeColor" prefHeight="100.0" prefWidth="400.0" ripplerFill="#fc0000" style="-fx-background-color: #f1f1f1;" text="Список розкладів" />
+        <JFXButton fx:id="b2" buttonType="RAISED" layoutX="10.0" layoutY="123.0" onAction="#changeColor" prefHeight="100.0" prefWidth="400.0" ripplerFill="#fc0000" style="-fx-background-color: #f1f1f1;" text="Список карт" />
+        <JFXButton fx:id="b3" buttonType="RAISED" layoutX="10.0" layoutY="197.0" onAction="#changeColor" prefHeight="100.0" prefWidth="400.0" ripplerFill="#fc0000" style="-fx-background-color: #f1f1f1;" text="Календар" />
+        <JFXButton fx:id="b4" buttonType="RAISED" layoutX="10.0" layoutY="271.0" onAction="#changeColor" prefHeight="100.0" prefWidth="400.0" ripplerFill="#fc0000" style="-fx-background-color: #f1f1f1;" text="Мої розклади" />
+        <JFXButton fx:id="b5" buttonType="RAISED" layoutX="10.0" layoutY="357.0" onAction="#changeColor" prefHeight="100.0" prefWidth="400.0" ripplerFill="#fc0000" style="-fx-background-color: #f1f1f1;" text="Мої трактування" />
+        <JFXButton fx:id="exit" buttonType="RAISED" layoutX="10.0" layoutY="471.0" onAction="#exit" prefHeight="100.0" prefWidth="400.0" ripplerFill="#fc0000" style="-fx-background-color: #f1f1f1;" text="Вийти" />
+    </children>
+</VBox>

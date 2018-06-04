@@ -1,0 +1,12 @@
+.root {
+    -fx-background-image: url("space.jpg");
+    -fx-background-size: cover;
+}
+
+.label {
+    -fx-font-size: 15px;
+    -fx-background-color: white;
+    -fx-padding: 5 5 5 5;
+    -fx-border-radius: 10 10 10 10;
+    -fx-background-radius: 10 10 10 10;
+}
