@@ -1,0 +1,11 @@
+@import "base";
+
+footer {
+  background: $title-color;
+  height: 50px;
+  padding: 15px;
+}
+
+.year {
+  font-size: $text;
+}

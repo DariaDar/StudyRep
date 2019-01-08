@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700|Source+Sans+Pro:400,600&amp;subset=cyrillic-ext"
+          rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/animate.css">
+</head>
+<body>
+<header class="user-header">
+    <div id="sparkles"></div>
+    <% include ../views/navbar.ejs %>
+    <div class="heading">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <h1 class="heading__title heading__title_profile"><%= user.username%></h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <h2 class="heading__subtitle">Создано схем - <%=patterns.length%></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section id="works">
+    <div class="top-heading">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-2">
+                    <h2 class="title">Мои работы</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <% var d = 1;%>
+    <% if(patterns.length == 0) {%>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 offset-1">
+                <h2 class="title">Вы пока не создали ни одной схемы.</h2>
+            </div>
+        </div>
+    </div>
+
+
+    <% } else { %>
+    <div class="works">
+        <div class="row justify-content-center">
+            <div class="col-lg-11">
+                <div id="carousel-works" class="carousel slide" data-ride="carousel">
+                    <ul class="carousel-indicators">
+                        <% for(var i = 0; i < patternCnt; i++) { %>
+                        <li data-target="#carousel-works" data-slide-to="<%=i%>" <%if(i == 0) {%>class="active" <%}%>></li>
+                        <%}%>
+                    </ul>
+                    <div class="carousel-inner">
+                        <% for(var i = 0; i < patternCnt; i++) { %>
+                        <div class="carousel-item <%if(i == 0) {%> active <%}%>">
+                            <div class="list d-flex justify-content-center">
+                                <% for(; d <= patterns.length;) {%>
+                                <div class="list__item ">
+                                    <div class="list__image">
+                                        <img src="data:image/jpg;base64,<%= patterns[d - 1].image %>" alt="Schema">
+                                    </div>
+                                    <div class="list__name">
+                                        <h3><%=patterns[d - 1].title%></h3>
+                                    </div>
+                                    <div class="list__button">
+                                        <button class="cta"><a href="/pattern/<%=patterns[d - 1]._id%>" class="button-link">Подробнее</a></button>
+                                    </div>
+                                </div>
+
+                                <% if((d % 3) == 0) {
+                                    d++;
+                                    break;
+                                }
+                                else d++;
+                                }%>
+                            </div>
+                        </div>
+                        <% }%>
+                    </div>
+                    <a class="carousel-control-prev" href="#carousel-works" data-slide="prev">
+                        <i class="fas fa-chevron-circle-left"></i>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel-works" data-slide="next">
+                        <i class="fas fa-chevron-circle-right"></i>
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <%} %>
+</section>
+
+
+<div id="modal" class="modal">
+    <div class="modal__wrapper">
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-lg-1">
+                    <a href="#close" class="close"><i class="fas fa-times"></i></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="options">
+                        <div class="options__name">
+                            Название
+                        </div>
+                        <div class="list__image">
+                            <img src="/images/s2.jpg" alt="Image">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="/javascripts/sketch.js"></script>
+<script src="/javascripts/animation.js"></script>
+</body>
+</html>

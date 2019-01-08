@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Создать новую схему</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700|Source+Sans+Pro:400,600&amp;subset=cyrillic-ext"
+          rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+
+<header class="user-header">
+    <div id="sparkles"></div>
+    <% include ../views/navbar.ejs %>
+    <div class="heading">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <h1 class="heading__title">Создать схему</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header>
+<section class="creation">
+    <form class="form-creation" action="/create" method="post">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="schema-creation">
+                        <div class="form-group">
+                            <input type="text" id="title" class="schema-creation__name input-noborder" placeholder="Название схемы"
+                                   maxlength="150" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="line"></div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-4">
+                    <div class="options options_left text-center">
+                        <div class="form-group">
+                            <h2 class="options__header">Выберите цвет:</h2>
+                            <input type="color" class="options__input input-gray" id="color-picker" value="#ff0066">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="vertical-line"></div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="options text-center">
+                        <div class="form-group">
+                            <h2 class="options__header">Выберите звук:</h2>
+                            <div class="options__size">
+                                <div class="form-check">
+                                    <input type="radio" class="options__radio" value="dog" name="radioSound" id="radioDog">
+                                    <label for="radioDog" class="options__label">Собака</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio"  class="options__radio" value="duck" name="radioSound" id="radioDuck">
+                                    <label for="radioDuck" class="options__label">Утка</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio"  class="options__radio" value="cat" name="radioSound" id="radioCat">
+                                    <label for="radioCat" class="options__label">Кошка</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 offset-1">
+                    <span class="pointer pointer-left" onclick="decreaseValue('pointer-left')"><i class="fas fa-angle-left"></i></span>
+                    <span class="pointer pointer-right" onclick="increaseValue('pointer-right')"><i class="fas fa-angle-right"></i></span>
+                    <input type="number" class="input-gray input-number" id="schema-width" value="25"
+                           min="5" max="38" maxlength="100" hidden>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1 text-right">
+                    <div class="pointer pointer-up" onclick="decreaseValue('pointer-up')"><i class="fas fa-angle-up"></i></div>
+                    <div class="pointer pointer-down" onclick="increaseValue('pointer-down')"><i class="fas fa-angle-down"></i></div>
+                    <input type="number" class="input-gray input-number" id="schema-height" value="10"
+                           min="5" max="100" maxlength="100" hidden>
+                </div>
+                <div class="col-lg-11">
+                    <div class="canvas">
+                        <canvas id="canvas"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-6 offset-1">
+                    <div class="options d-flex justify-content-between">
+                        <button class="button-pink options__button downloadOnServer" id="saveOnServer" type="button">Сохранить</button>
+                        <button class="button-pink options__button download" type="button">Cкачать изображением</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-3">
+                    <div class="results"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="javascripts/fabric.js"></script>
+<script src="javascripts/canvas.js"></script>
+<script src="javascripts/download.js"></script>
+<script src="/javascripts/sketch.js"></script>
+<script src="/javascripts/animation.js"></script>
+</body>
+</html>

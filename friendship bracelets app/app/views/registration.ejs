@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700|Source+Sans+Pro:400,600&amp;subset=cyrillic-ext"
+          rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+<section id="registration">
+    <div class="wrapper">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="form form-registration">
+                        <div class="form__header text-center">
+                            <h1>Регистрация</h1>
+                        </div>
+                        <form action="/registration" method="post" class="form__registration text-center">
+                            <div class="form-group">
+                                <input class="form__field" type="text" name="username" placeholder="Username" autofocus required>
+                                <input class="form__field" type="email" name="email" placeholder="Email" required>
+                                <input class="form__field" type="password" name="password" placeholder="Password" required>
+                                <!--<input class="form__field" type="password" placeholder="Repeat password" required>-->
+                            </div>
+                            <div class="form__submit">
+                                <button class="submit" type="submit">Вперёд!</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

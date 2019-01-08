@@ -1,0 +1,74 @@
+@import "base";
+
+#header {
+  background: url("../images/bg8.jpg") no-repeat center top / cover;
+  height: 100vh;
+  padding: 60px 0;
+}
+
+.heading {
+  font-family: $secondary-font;
+
+  &__title {
+    font-size: $main-header;
+    color: $main-color;
+    font-weight: $semi-bold;
+  }
+
+  &__subtitle {
+    font-size: $subtitle;
+    color: $accent-color;
+    margin: 20px 0;
+  }
+
+  &__title_profile {
+    font-size: $main-header + 20px;
+  }
+}
+
+.header-form {
+  margin-top: 40px;
+}
+
+.form {
+  padding: 70px 60px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: $gray-color;
+  @include border-radius(25px);
+
+  &__authorization {
+
+  }
+
+  &__field {
+    margin: 0 5px;
+  }
+}
+
+.submit {
+  @extend button;
+  color: $main-color;
+  display: inline;
+  padding: 20px 30px;
+  margin: 0 10px;
+}
+
+
+//USER PAGE
+
+.user-header {
+  background: url("../images/bg.jpg") no-repeat center top / cover;
+  height: 100vh;
+  padding: 30vh 0;
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.pattern-header {
+  background: url("../images/bg3.jpg") no-repeat center top / cover;
+  //background-size: 40% auto;
+  height: 50vh;
+  padding: 10vh 0;
+}

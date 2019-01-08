@@ -1,0 +1,128 @@
+@import "../modules/variables";
+@import "../modules/mixins";
+@import "../../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/link-colors";
+@import "../../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/css3";
+
+body {
+  font-family: $main-font;
+  overflow-x: hidden;
+  color: $main-color;
+  font-weight: $light;
+}
+
+a {
+  @include link-colors($main-color, $accent-color, $accent-color, $main-color, $accent-color);
+  @include transition();
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+
+.button-link {
+  @extend a;
+  @include link-colors($title-color, $main-color, $main-color, $title-color);
+}
+
+input {
+  display: inline-block;
+  outline: none;
+  font-size: $text;
+  padding: 20px 30px;
+  border: 1px solid #ffffff;
+  color: $gray-color--dark;
+  font-weight: $light;
+  @include border-radius(25px, 25px);
+
+  &:focus {
+    border: 1px solid $accent-color;
+  }
+
+  &::placeholder {
+    font-weight: $light;
+    color: $gray-color;
+  }
+
+}
+
+.input-gray {
+  @extend input;
+  border-color: $gray-color--light;
+  margin: 15px 0;
+  width: 100%;
+}
+
+.input-noborder {
+  @extend input;
+  border: none;
+  font-size: $section-header;
+  font-weight: $bold;
+
+  &:focus {
+    border: none;
+    border-left: 1px solid $gray-color--light;
+    @include border-radius(0);
+  }
+
+  &::placeholder {
+
+  }
+}
+
+button {
+  outline: none;
+  background: transparent;
+  font-weight: $light;
+  padding: 10px 15px;
+  border: 1px solid $accent-color;
+  cursor: pointer;
+  @include border-radius(25px);
+  @include transition();
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: $accent-color;
+    color: $main-color;
+  }
+}
+
+.button-save {
+  @extend button;
+  font-size: $text + 3px;
+  padding: 15px 25px;
+
+  &:hover {
+    color: $main-color;
+  }
+}
+
+.button-pink {
+  @extend .button-save;
+  background-color: $accent-color;
+  color: $main-color;
+
+  &:hover {
+    background-color: $main-color;
+    color: black;
+  }
+
+}
+
+textarea {
+  width: 50%;
+  resize: none;
+  border: 1px solid $gray-color;
+  @include border-radius(10px);
+  padding: 3%;
+  font-size: $text;
+  font-weight: $light;
+
+  &:focus {
+    outline: none;
+    border: 1px solid $gray-color--dark;
+  }
+}
+
+

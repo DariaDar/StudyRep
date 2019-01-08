@@ -1,0 +1,372 @@
+@import "base";
+@import "../../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/css3";
+
+
+.space {
+  background: url("../images/bg3.jpg") no-repeat center / cover;
+  height: 100px;
+}
+
+.description {
+  padding: 75px 0;
+  background: url("../images/hands.png") no-repeat center bottom;
+  background-size: 50%;
+  padding-bottom: 30%;
+}
+
+.item {
+  font-size: $text;
+  color: $gray-color--dark;
+
+  &__header {
+    font-size: $subtitle;
+    font-weight: $regular;
+    color: $title-color;
+    margin: 10px 0;
+  }
+}
+
+.top {
+  background: url("../images/bracelets.png") no-repeat center top;
+  background-size: 50%;
+  background-position-y: -4%;
+  padding-top: 25%;
+  padding-bottom: 4%;
+}
+
+.top-heading {
+  margin: 20px 0;
+  color: $title-color;
+}
+
+.title {
+  font-size: $subtitle;
+  color: $title-color;
+}
+
+.works {
+
+}
+
+.fas {
+  color: $accent-color;
+  font-size: 32px;
+}
+
+#carousel-works {
+  margin: 50px 0;
+}
+
+.carousel-indicators {
+  margin-bottom: -2%;
+}
+.carousel-indicators li {
+  background-color: $accent-color;
+}
+
+.carousel-indicators .active {
+  background-color: $gray-color--light;
+}
+
+.list {
+  font-size: $text;
+  color: $gray-color--dark;
+
+  &__item {
+    padding: 20px;
+    margin: 10px;
+    width: 25%;
+    height: auto;
+    text-align: center;
+    border: 1px solid $gray-color--light;
+  }
+
+  &__image {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+  }
+
+  &__image img {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  &__name {
+    padding: 10px 0;
+  }
+}
+
+#works {
+  padding: 5% 0;
+}
+
+
+.creation {
+  //padding: 10% 0;
+}
+
+.line {
+  border-bottom: 1px solid $accent-color;
+  width: 100%;
+  margin: 40px 0;
+}
+
+canvas{
+  border: 1px solid $accent-color;
+  margin: 10px auto;
+}
+
+.form-creation {
+  margin: 50px 0;
+}
+
+.options {
+  color: $gray-color--dark;
+  padding: 20px;
+
+  &__header {
+    color: $title-color;
+    font-style: $subtitle;
+    font-weight: $regular;
+    padding: 15px 0;
+  }
+
+  &__name {
+    color: $gray-color--dark;
+    font-size: $section-header;
+    font-weight: $bold;
+    padding: 15px 0;
+  }
+
+  &__input {
+    margin: 0 auto;
+    width: 100%;
+    height: 80px;
+  }
+
+  &__label {
+    cursor: pointer;
+    border: 1px solid $accent-color;
+    width: 100%;
+    padding: 7% 0;
+    @include border-radius(25px, 25px);
+    @include transition();
+  }
+
+  &__radio {
+    visibility: hidden;
+
+    &:checked + .options__label {
+      background: $accent-color;
+      color: $main-color;
+    }
+  }
+}
+
+.vertical-line {
+  height: 100%;
+  width: 1px;
+  border-right: 1px solid $accent-color;
+  margin: 0 auto;
+}
+
+
+//MODAL
+
+.modal{
+  position: fixed;
+  background: rgba(0,0,0,0.8);
+  @include transition();
+  z-index: 999999;
+  display: none;
+  pointer-events: none;
+
+  &:target {
+    display: block;
+    pointer-events: auto;
+  }
+
+  &__wrapper {
+    position: relative;
+    margin: 0 auto;
+    background-color: $main-color;
+    width: 75%;
+  }
+}
+
+.results {
+  font-size: $subtitle;
+  color: $gray-color--dark;
+}
+
+
+.naming {
+  font-size: $section-header;
+  font-weight: $bold;
+  color: $gray-color--dark;
+}
+
+.wrapper {
+  margin: 20px 0;
+}
+
+.pattern {
+  padding: 3%;
+}
+.pattern img{
+  border: 3px solid $gray-color;
+  display: block;
+  margin: 0 auto;
+  -webkit-box-shadow: -1px 0px 37px -12px rgba(0,0,0,0.75);
+  -moz-box-shadow: -1px 0px 37px -12px rgba(0,0,0,0.75);
+  box-shadow: -1px 0px 37px -12px rgba(0,0,0,0.75);
+}
+
+.pointer-left, .pointer-right {
+  padding: 5px;
+}
+
+.pointer i {
+  color: $gray-color;
+  @include transition();
+  margin: 0 5px;
+
+  &:hover {
+    color: $accent-color;
+    cursor: pointer;
+  }
+}
+
+.like {
+  margin: 100% 0;
+}
+
+.like i {
+  font-size: $main-header;
+  @include transition();
+
+  &:hover {
+    cursor: pointer;
+    color: $accent-color;
+  }
+}
+
+//PRELOADER ANIMATION
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right:0;
+  bottom:0;
+  background: white;
+  z-index: 30;
+
+  &__content {
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    height: 100%;
+  }
+  &__loader {
+    max-width: 15rem;
+    width: 100%;
+    height: auto;
+    stroke-linecap: round;
+  }
+}
+
+circle {
+  fill: none;
+  stroke-width: 3.5px;
+  animation-name: preloader;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  transform-origin: 170px 170px;
+  will-change: transform;
+
+  &:nth-of-type(1) {
+    stroke-dasharray: 550px;
+  }
+
+  &:nth-of-type(2) {
+    stroke-dasharray: 500px;
+  }
+
+  &:nth-of-type(3) {
+    stroke-dasharray: 450px;
+  }
+
+  &:nth-of-type(4) {
+    stroke-dasharray: 300px;
+  }
+
+  @for $i from 1 through 4 {
+    &:nth-of-type(#{$i}) {
+      animation-delay: -#{$i * 0.15}s;
+    }
+  }
+}
+
+
+@keyframes preloader {
+  50% {
+    transform: rotate(360deg);
+  }
+}
+
+.sketch {
+  border: none;
+  z-index: auto;
+  position: absolute;
+  margin-top: -30vh;
+}
+
+.comments {
+  margin: 20px 0;
+  color: $gray-color--dark;
+
+  &__body {
+    background: #f1f1f1;
+    padding: 20px;
+    margin: 10px 0;
+  }
+
+  &__author {
+    padding: 10px 0;
+    font-weight: $bold;
+    font-size: $text + 3px;
+  }
+
+  &__comment {
+    margin: 10px 0;
+  }
+}
+
+#canvasText {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  border: none
+}
+
+#canvasAnimation {
+  z-index: -10;
+  position: relative;
+  left: 0;
+  top: 0;
+  border: none;
+}
+
+
+
+
+
+

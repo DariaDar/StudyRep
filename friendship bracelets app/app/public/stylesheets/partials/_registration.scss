@@ -1,0 +1,24 @@
+@import "base";
+
+#registration {
+  background: url("../images/bg4.jpg") no-repeat center top / cover;
+  height: 100vh;
+  padding: 2% 0;
+}
+
+.form__registration input{
+  display: block;
+  margin: 10px auto;
+  width: 50%;
+}
+
+.form__header {
+  color: $main-color;
+  font-size: $section-header;
+  padding: 10px;
+}
+
+.form-registration {
+  padding: 50px;
+}
+
