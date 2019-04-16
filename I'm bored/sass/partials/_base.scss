@@ -1,0 +1,50 @@
+@import "../modules/mixins";
+@import "../modules/variables";
+@import "compass";
+
+@include link($accent-color, $main-color, $accent-color-2, $accent-color);
+
+body {
+  font-family: $main-font;
+  background: $main-bg-color;
+}
+
+::selection {
+  color: inherit;
+  background: $accent-color-2;
+}
+
+a {
+  @include transition(0.2s);
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+h1 {
+  font-family: $secondary-font;
+  font-weight: $black;
+  font-size: 3em;
+  color: $secondary-color;
+}
+
+h2 {
+  font-weight: $bold;
+  font-size: 2.5em;
+  color: $main-color;
+}
+h3 {
+  font-size: 1.5em;
+  color: $accent-color;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+input[type="radio"] {
+  display: none;
+}
+

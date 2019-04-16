@@ -1,0 +1,34 @@
+{
+  "name": "ImBored",
+  "main": "index.html",
+  "description": "",
+  "window": {
+    "title": "I'M BORED",
+    "icon": "img/aster.png",
+    "toolbar": true,
+    "frame": true,
+    "width": 900,
+    "height": 600,
+    "min_width": 400,
+    "min_height": 200,
+    "max_width": 900,
+    "max_height": 600
+  },
+  "version": "0.0.1",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "jquery": "^3.3.1",
+    "jsdom": "^14.0.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "nwjs-builder-phoenix": "^1.15.0"
+  },
+  "build": {
+    "nwVersion": "0.36.3"
+  },
+  "scripts": {
+    "dist": "build --tasks win-x64,linux-x64,mac-x64 --mirror https://dl.nwjs.io/ .",
+    "start": "run --x86 --mirror https://dl.nwjs.io/ ."
+  }
+}

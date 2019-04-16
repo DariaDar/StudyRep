@@ -1,0 +1,39 @@
+@import "variables";
+
+@mixin link ($link, $visit, $hover, $active) {
+  a {
+    color: $link;
+    &:visited {
+      color: $visit;
+    }
+    &:hover {
+      color: $hover;
+    }
+    &:active {
+      color: $active;
+    }
+  }
+}
+
+@mixin text-light ($font-size, $color) {
+  font-size: $font-size;
+  font-weight: $light;
+  line-height: 1.3em;
+  color: $color;
+}
+
+@mixin header {
+  height: 100vh;
+  color: $secondary-color;
+  padding: 40px;
+}
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}

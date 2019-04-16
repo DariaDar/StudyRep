@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>I`M BORED</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Nunito:200,400,700,900&amp;subset=cyrillic"
+          rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+<div id="app">
+    <section id="cities" v-show="show">
+        <div class="header">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-4 col-sm-5 col-7">
+                        <h2>Выберите город</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cities">
+            <div class="container">
+                <div class="row text-center justify-content-center mb-4">
+                    <div class="col-3">
+                        <div class="city">
+                            <input type="radio" id="radio-dnipro" name="radio-city" value="dp" v-model="city">
+                            <label for="radio-dnipro">
+                                <img src="img/waterfall-1.svg" alt="Dnepr" class="city__logo">
+                                Днепр
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="city">
+                            <input type="radio" id="radio-zaporiz" name="radio-city" value="zp" v-model="city">
+                            <label for="radio-zaporiz">
+                                <img src="img/nuclear-plant.svg" alt="Zaporizhzhia" class="city__logo">
+                                Запорожье
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="city">
+                            <input type="radio" id="radio-kiev" name="radio-city" value="kiev" v-model="city">
+                            <label for="radio-kiev">
+                                <img src="img/cityscape.svg" alt="Kyiv" class="city__logo">
+                                Киев
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="city">
+                            <input type="radio" id="radio-lviv" name="radio-city" value="lviv" v-model="city">
+                            <label for="radio-lviv">
+                                <img src="img/castle.svg" alt="Lviv" class="city__logo">
+                                Львов
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center justify-content-center mb-4">
+                    <div class="col-3">
+                        <div class="city">
+                            <input type="radio" id="radio-odessa" name="radio-city" value="od" v-model="city">
+                            <label for="radio-odessa">
+                                <img src="img/sea.svg" alt="Odessa" class="city__logo">
+                                Одесса
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="city">
+                            <input type="radio" id="radio-poltava" name="radio-city" value="pl" v-model="city">
+                            <label for="radio-poltava">
+                                <img src="img/mill.svg" alt="Poltava" class="city__logo">
+                                Полтава
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="city">
+                            <input type="radio" id="radio-kharkov" name="radio-city" value="kh" v-model="city">
+                            <label for="radio-kharkov">
+                                <img src="img/bridge.svg" alt="Kharkov" class="city__logo">
+                                Харьков
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center justify-content-center">
+                    <div class="col-3">
+                        <div class="city">
+                            <input type="radio" id="radio-none" name="radio-city" value="none" v-model="city" checked>
+                            <label for="radio-none">
+                                <img src="img/desert.svg" alt="Desert" class="city__logo">
+                                Не выбирать
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tip">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-2">
+                        <img src="img/025-tree-1.svg" alt="Trees">
+                    </div>
+                    <div class="col-8 text-center">
+                        <div class="mb-4">
+                            <p class="text">Примечание: <span>Если выбрать город, будет доступна дополнителная категория
+                            занятий.</span></p>
+                        </div>
+                        <a href="#" @click="show = !show">Дальше <span><i class="fas fa-arrow-right"></i></span></a>
+                    </div>
+                    <div class="col-2">
+                        <img src="img/004-birdhouse.svg" alt="Trees">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section v-show="!show">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <div><a href="#" @click="show = !show"><i class="fas fa-arrow-left"></i> Назад</a></div>
+                </div>
+            </div>
+        </div>
+        <div id="events">
+            <div class="header-events">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3">
+                            <h2>I'M BORED</h2>
+                        </div>
+                        <div class="col-9">
+                            <ul class="menu d-flex justify-content-between">
+                                <li>
+                                    <input type="radio" id="radio-free" name="radio" value="free"
+                                           :onchange="changeArr" v-model="type">
+                                    <label for="radio-free" class="menu__label">Бесплатно</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="radio-home" name="radio" value="home"
+                                           :onchange="changeArr" v-model="type" checked>
+                                    <label for="radio-home" class="menu__label">Дом</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="radio-sport" name="radio" value="sport"
+                                           :onchange="changeArr" v-model="type">
+                                    <label for="radio-sport" class="menu__label">Спорт</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="radio-event" name="radio" value="event"
+                                           v-bind:disabled="city == 'none' ? true: false"
+                                           :onchange="changeArr" v-model="type">
+                                    <label for="radio-event" class="menu__label">Мероприятие</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="radio-random" name="radio" value="random"
+                                           :onchange="changeArr" v-model="type">
+                                    <label for="radio-random" class="menu__label">Случайное</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="button">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-3">
+                            <img src="img/003-flower-1.svg" alt="Flower">
+                        </div>
+                        <div class="col-6">
+                            <button @click="giveEvent()" :disabled="!type">Найти занятие</button>
+                        </div>
+                        <div class="col-3">
+                            <img src="img/034-flowers.svg" alt="Flower">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="result">
+                <div class="container" v-if="eventPlace !== null && type === 'event'">
+                    <div class="row justify-content-center align-items-end">
+                        <div class="col-7">
+                            <div class="place">
+                                <div class="place__title text-center mb-3">
+                                    <h2>{{eventPlace.title}}</h2>
+                                </div>
+                                <div v-if="eventPlace.tags !== '' && eventPlace.place !== ''">
+                                    <div class="place__img">
+                                        <img :src="eventPlace.img" alt="Image">
+                                    </div>
+                                    <div class="d-flex justify-content-left offset-2">
+                                        <div class="place__name mr-3 mb-3">
+                                            Метки:
+                                        </div>
+                                        <div class="place__tags">
+                                            {{eventPlace.tags}}
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-left offset-2">
+                                        <div class="place__name mr-3">
+                                            Место:
+                                        </div>
+                                        <div class="place__tags">
+                                            {{eventPlace.place}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" v-else>
+                    <div class="row justify-content-center text-center mb-4">
+                        <div class="col-7">
+                            <div class="place">
+                                <div class="place__title mb-3">
+                                    <h2>{{event}}</h2>
+                                </div>
+                                <div class="place__comment">
+                                    <h3>{{comment}}</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

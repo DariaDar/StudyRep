@@ -1,0 +1,85 @@
+@import "base";
+
+#cities {
+  padding: 5% 0;
+}
+
+.header, .cities {
+  margin-bottom: 5%;
+}
+
+//.city {
+//  &__name > label {
+//    font-size: 1.5em;
+//  }
+//
+//  &__logo {
+//    margin-bottom: 1.3em;
+//
+//    img {
+//      @include border-radius(50%);
+//      width: 90%;
+//      margin: 0 auto;
+//
+//      .city:hover & {
+//        @include box-shadow(rgba($gray-color, 0.4) 0 0 25px, rgba($gray-color--lighter, 0.2) 0 0 3px 1px inset);
+//        cursor: pointer;
+//      }
+//
+//    }
+//  }
+//
+//  &:hover &__logo, &:hover &__name {
+//    @include transition(0.3s ease);
+//    transform: scale(1.3);
+//  }
+//
+//  &__name > input:checked + label {
+//    color: $secondary-color;
+//  }
+//
+//}
+
+.city {
+
+  label {
+    font-size: 1.5em;
+  }
+
+  &:hover label {
+    @include transition(0.3s ease);
+    transform: scale(1.3);
+  }
+
+  &__logo {
+    @include border-radius(50%);
+    width: 90%;
+    margin: 0 auto;
+
+    .city:hover & {
+      @include box-shadow(rgba($gray-color, 0.4) 0 0 25px, rgba($gray-color--lighter, 0.2) 0 0 3px 1px inset);
+      cursor: pointer;
+    }
+  }
+
+  & > input:checked + label {
+    color: $secondary-color;
+    transform: scale(1.3);
+  }
+
+
+}
+
+.tip {
+  bottom: 0;
+}
+
+.text {
+  font-size: 1.5em;
+  color: $accent-color;
+
+  span {
+    font-size: 0.8em;
+    color: $main-color;
+  }
+}
